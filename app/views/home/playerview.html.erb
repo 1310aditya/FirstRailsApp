@@ -1,0 +1,53 @@
+
+<table class="table table-striped">
+ <tbody>
+    <tr>
+      <td class="col-md-3"><h4><%= current_user.name %></h4></td>
+      <td class="col-md-3"><strong>$<%= current_user.balance %></strong></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="container">
+<%=image_tag @current_user.image, :class => "img-responsive", :width => 120, :height => 240 %>
+</div>
+<div>
+
+<h1>My Bids</h1>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+      	<th>S.No</th>
+        <th>Name of user</th>
+        <th>Bid</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      	<%counter=1%>
+      	<% @mybids.each do |u| %>
+      	<tr>
+      	<%if u.player_id == current_user.id%>
+        <td><%=counter%></td>
+		    <td>
+        <% @myusers.each do |x|%>
+                            <% if (x.id==u.user_id) %>
+                            <%= x.name%>
+                        <%end%>
+                        <%end%>
+
+        </td>
+        <td><%=u.amount%></td>
+        <%counter+=1%>
+        <td>
+        <button type="button" class="btn btn-primary"><%= link_to 'Accept Bid',root_path%></button></td>
+        <td>
+        <button type="button" class="btn btn-primary"><%= link_to 'Discuss Terms',root_path%></button></td>
+        <%end%>
+        </tr>
+        <%end%>
+      </tbody>
+  </table>
+</div>

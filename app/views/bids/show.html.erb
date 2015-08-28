@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+		<h2>Created Bid</h2>
+		<p>The details are as follows:</p>            
+		<table class="table table-bordered">
+				<tbody>
+						
+						<tr>
+								<td><strong>User Name:</strong>
+												<% @myusers.each do |x|%>
+														<% if (@bid.user_id==x.id) %>
+														<%= x.name%>
+														<%end%>
+												<%end%>
+								</td>
+						</tr>
+						
+						<tr>
+								<td>
+												<strong>Player Name:</strong>
+												<% @myusers.each do |x|%>
+														<% if (@bid.player_id==x.id) %>
+														<%= x.name%>
+
+														<% @thispl=x%>
+														<%end%>
+												<%end%>
+								</td>
+						</tr>
+						
+						<tr>
+								<td><strong>Amount:</strong>
+												<%= @bid.amount %>
+								</td>
+						</tr>
+								
+				</tbody>
+		</table>
+</div>
+<%= link_to 'Edit', edit_bid_path(@bid, player_id: @thispl.id ) %> |
+<%= link_to 'Back', bids_path %>
+		

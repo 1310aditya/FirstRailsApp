@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tags %>
+</head>
+<body >
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.name %></strong>.
+  <br>
+  Address: <%= current_user.address%>
+  <br>
+  Balance: $<%= current_user.balance%>
+  <div class="btn-group" role="group" aria-label="...">
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-default' %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-default' %>
+  </div>
+<% else %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="account-wall">
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="btn-group" role="group" aria-label="...">
+<%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-default'  %>
+<%= link_to "Login", new_user_session_path, :class => 'btn btn-default'  %>  
+</div>
+
+			</div>
+        </div>
+    </div>
+</div>
+
+<% end %>
+<%= yield %>
+
+</body>
+</html>
