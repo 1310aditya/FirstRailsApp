@@ -30,7 +30,6 @@
         </td>
         <td><%= bid.amount %></td>
         <td><%= link_to 'Show', bid %></td>
-        
         <td><%= link_to 'Edit', edit_bid_path(bid , :player_id => @thispl.id ) %></td>
         
         <td><%= link_to 'Destroy', bid, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -41,4 +40,4 @@
 
 <br>
 
-<%= link_to 'Home', root_path %>
+<%= link_to 'Home', root_path , :class => 'btn btn-default'%>
