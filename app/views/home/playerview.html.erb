@@ -42,13 +42,14 @@
         <td><%=u.amount%></td>
         <%counter+=1%>
         <td>
-        <button type="button" class="btn btn-primary"><%= link_to 'Accept Bid',root_path,data: { confirm: "Are you sure you want to accept the bid? 
+                <button type="button" class="btn btn-primary"><%= link_to 'Accept Bid',root_path,data: { confirm: "Are you sure you want to accept the bid? 
 
-          Note: The Terms of agreement must be dicussed before agreement , if not already done so." }%></button>
+                  Note: The Terms of agreement must be dicussed before agreement , if not already done so." }%>
+                </button>
 
-        <button type="button" class="btn btn-primary"><%= link_to 'Reject Bid',root_path,data: { confirm: "Are you sure you want to reject the bid?" }%></button>
-        
-        <button type="button" class="btn btn-primary"><%= link_to 'Discuss Terms',root_path%></button></td>
+                <button type="button" class="btn btn-primary"><%= link_to 'Reject Bid',root_path,data: { confirm: "Are you sure you want to reject the bid?" }%></button>
+                
+                <button type="button" class="btn btn-primary"><%= link_to 'Discuss Terms',root_path%></button></td>
         <%end%>
         </tr>
         <%end%>
