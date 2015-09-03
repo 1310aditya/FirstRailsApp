@@ -46,15 +46,17 @@ class BidsController < ApplicationController
   def update
     @myusers = User.all
     respond_to do |format|
-      if @bid.update(bid_params)
-        format.html { redirect_to @bid, notice: 'Bid was successfully updated.' }
-        format.json { render :show, status: :ok, location: @bid }
-      else
-        #format.html { render :edit , :player_id => params[:bid][:player_id]}
-        #redirect_to edit_bid_path(:player_id => params[:bid][:player_id])
-        format.html { render :edit}
-        format.json { render json: @bid.errors, status: :unprocessable_entity }
-      end
+            if (@bid.update(bid_params) )
+              format.html { redirect_to @bid, notice: 'Bid was successfully updated.' }
+              format.json { render :show, status: :ok, location: @bid }
+            else
+              #format.html { render :edit , :player_id => params[:bid][:player_id]}
+              #redirect_to edit_bid_path(:player_id => params[:bid][:player_id])
+
+              #Solve the issue when rendering , player_id is not sent as params again.
+              format.html { render :edit}
+              format.json { render json: @bid.errors, status: :unprocessable_entity }
+            end
     end
   end
 
@@ -77,7 +79,7 @@ class BidsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bid_params
-      params.require(:bid).permit(:user_id, :player_id, :amount)
+      params.require(:bid).permit(:user_id, :player_id, :amount,:status)
     end
 
 end

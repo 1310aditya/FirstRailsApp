@@ -52,11 +52,17 @@
               <%end%>
               </div>
 
-                    <div class="field">
+              <div class="field">
                 <%= f.label :amount %><br>
                 $<%= f.number_field :amount %>
               </div>
                 <br>
+
+              <div>
+              <%if params[:action] == "new"%>
+                <%= f.hidden_field :status,:value => 0%>
+              <%end%>  
+              </div>
 
 
               <div class="actions">
