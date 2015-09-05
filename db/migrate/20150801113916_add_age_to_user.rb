@@ -9,6 +9,5 @@ class AddAgeToUser < ActiveRecord::Migration
     add_column :users, :desc, :text
     add_column :users, :min_bid, :integer
     add_column :users, :max_bid, :integer
-    add_attachment :users, :image
   end
 end
