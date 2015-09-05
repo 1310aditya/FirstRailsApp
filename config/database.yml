@@ -84,10 +84,10 @@ test:
 #
 production:
   <<: *default
-  database: AdiApp
-  username: postgres
+  #database: AdiApp
+  #username: postgres
   #password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
   pool: 5
-  host: localhost
-  username: postgres
-  password: password
+  #host: localhost
+  #username: postgres
+  #password: password

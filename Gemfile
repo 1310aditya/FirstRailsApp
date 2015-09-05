@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'devise'
+gem 'rails_12factor', group: :production
 gem 'pry'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -46,3 +47,4 @@ group :development, :test do
   gem 'spring'
 end
 
+ruby "2.2.2"
