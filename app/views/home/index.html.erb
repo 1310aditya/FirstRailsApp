@@ -1,10 +1,14 @@
 <h1><%= current_user.name%></h1>
 
-
 <div class="container">
 <%=image_tag @current_user.image, :class => "img-responsive", :width => 120, :height => 240 %>
 </div>
 
+<!--
+<div>
+<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:1000px;width:1200px;'><div id='gmap_canvas' style='height:1000px;width:1200px;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div> <a href='http://www.freevisitorcounters.com'>Freevisitorcounters</a> <script type='text/javascript' src='http://embedmaps.com/google-maps-authorization/script.js?id=efebbfcba07210d987e8833f54b6218e21facc43'></script><script type='text/javascript'>function init_map(){var myOptions = {zoom:12,center:new google.maps.LatLng(28.6372353,77.18236379999996),mapTypeId: google.maps.MapTypeId.HYBRID};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(28.6372353,77.18236379999996)});infowindow = new google.maps.InfoWindow({content:'<strong>8A/1</strong><br>Rajinder Nagar<br>110060 Delhi<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+</div>
+-->
 
 <h3><button class="btn btn-lg btn-success btn-block" onclick="$('#target').toggle();">Top Players of the week</button></h3>
 <div>
