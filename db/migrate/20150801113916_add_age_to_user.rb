@@ -4,7 +4,6 @@ class AddAgeToUser < ActiveRecord::Migration
     add_column :users, :age, :integer
     add_column :users, :address, :text
     add_column :users, :mobile, :integer
-    add_column :users, :image, :string
     add_column :users, :is_player, :boolean
     add_column :users, :exp, :integer
     add_column :users, :desc, :text
