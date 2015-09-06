@@ -15,6 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       u.permit(:name, :email, :password, :password_confirmation, :address, :image, 
         :is_player, :age,:mobile,:exp,:desc,:min_bid,:max_bid,:balance,:current_password)
     end
+    binding.pry
   end
 
   
