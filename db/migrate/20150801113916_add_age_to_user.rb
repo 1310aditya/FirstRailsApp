@@ -7,6 +7,7 @@ class AddAgeToUser < ActiveRecord::Migration
     add_column :users, :is_player, :boolean
     add_column :users, :exp, :integer
     add_column :users, :desc, :text
+    add_column :users, :balance, :bigint
     add_column :users, :min_bid, :integer
     add_column :users, :max_bid, :integer
   end
